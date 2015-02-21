@@ -1,0 +1,184 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Remote Rover Training System\\Engineering Requirements} 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author{Cody Herndon}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+
+
+% Place your abstract within the special {sciabstract} environment.
+
+\begin{sciabstract}
+  This document outlines engineering requirements for the Remote Rover Training System.  These engineering requirements are based on the associated customer requirements document which outlined desired characteristics of the Remote Rover Training System.  This system is intended to provide scientists and engineers with valuable experience developing and using robust remote robotics platforms and operating systems.
+\end{sciabstract}
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section{Introduction}
+The Remote Rover Training System (hereon referred to as ``the System'') is a mechanically simple mobile robot intended to provide a training platform for aspiring engineers and scientists who may use such robotics in the course of their duties.  The System is intended to provide a gentile and easy introduction to developing real-time operating systems on a remote mobile robot which is easily replaceable and robust enough to avoid being damaged by faulty programming.
+
+\section{Physical Requirements}
+These requirements outline restrictions on the System regarding size, weight, accessibility, and mobility.
+\subsection{The System shall weigh no more than 50 lbs.}
+\subsection{The System shall not exceed 3 feet by 3 feet by 3 feet.}
+\subsection{The system shall expose all components and circuitry to the user with the removal of at most one access panel.}
+\subsection{The system shall be capable of easily traversing a room with a carpet of no more than 1/2 inch thickness.}
+
+\section{Electrical Requirements}
+These requirements outline restrictions on the System regarding operational duration, range, and sensor capabilities.
+
+\subsection{Power and Operational Requirements}
+\subsubsection{The System shall utilize a battery of no less than 7.2 watt-hours.}
+\subsubsection{The System shall utilize a battery which is rechargeable.}
+\subsubsection{The System shall have enough stored energy to operate without activating its motors for at least one hour without recharging.}
+\subsubsection{The System shall have enough stored energy to operate at full forward speed for at least 10 minutes without recharging.}
+
+\subsection{Transmission and Communication Requirements}
+\subsubsection{The System shall be capable of receiving commands from a remote computer base station.}
+\subsubsection{The System shall not impose the need for hardware that is not commercial of the shelf to be installed on the computer base station to communicate.}
+\subsubsection{The System shall be capable of receiving commands from the base station at a distance of at least 50 feet.}
+\subsubsection{The System shall be capable of sending sensor data to the base station at a distance of at least 50 feet.}
+\subsubsection{The System shall be capable of receiving software updates from the base station at a distance of at least 50 feet.}
+
+\subsection{Sensor Requirements}
+\subsubsection{The System shall be capable of determining the distance travelled from its origin to within 10\% of the actual distance travelled.}
+\subsubsection{The System shall be capable of determining the remaining battery power available to within 10\% of the actual remaining battery power.}
+\subsubsection{The System shall be capable of determining the power dissipated through the drive motors to within 10\% of the actual power dissipation.}
+
+\section{Mechanical Requirements}
+These requirements outline restrictions on mechanical operations the System shall be capable of performing.
+
+\subsection{Motion Requirements}
+\subsubsection{The System shall be capable of travelling forward and reverse at a speed of no more than 3 mph.}
+\subsubsection{The System shall be capable of rotating clockwise and counterclockwise at a rate of no less than 6 degrees per second.}
+
+\section{Testing}
+
+\begin{tabular}{|c|c|p{8cm}|c|}
+  \hline
+  Item & Requirement & Test & Met\\\hline
+  2.1 & 50 lbs weight limit & Place the rover on a scale such that all its weight is supported on the scale.  The scale should report no more than 50 lbs. & \\\hline
+  2.2 & dimension limits & Measure 3 feet in each dimension, the System should not project beyond the measurements in that dimension. & \\\hline
+  2.3 & accessability requirements & Observe that if the System encloses its electronics that the electrical system can be accessed through a single access pannel & \\\hline
+  2.4 & drive requirements & Command the System to travel forward 10 ft on carpet of 1/2 inch thickness. & \\\hline
+  3.1.1 & battery capacity & Observe that the manufacturer rates the installed battery at the required capacity. & \\\hline
+  3.1.2 & battery rechargeability & Observe that the manufacturer denotes that the installed battery can be recharged. & \\\hline
+  3.1.3 & idle endurance & Activate the System and observe that it is capable of operating for at least one hour. & \\\hline
+  3.1.4 & active endurance & Activate the System and transmit a command to traverse forward.  Observe that the System is capable of continuing to travel for 10 minutes. & \\\hline
+
+\end{tabular}
+
+\begin{tabular}{c|c|p{8cm}|c}
+  \hline
+  3.2.1 & remote control & Observe that the System is capable of recieving commands and sending data without being physically connected to the base station. & \\\hline
+  3.2.2 & additional hardware & Observe that the base station is not attached to hardware that is not commercial off the shelf to communicate with the System. & \\\hline
+  3.2.3 & command range & Place the System 50 feet from the base station. Send a command from the base station to the System, observe that the System responds. & \\\hline
+  3.2.4 & response range & Place the System 50 feet from the base station. Observe that the System responds. & \\\hline
+  3.2.5 & update range & Place the System 50 feet from the base station. Attempt to update the System's software.  Observe that the System is properly updated. & \\\hline
+  3.3.1 & estimation accuracy & Activate the System and command it to travel forward 10 ft.  Observe that the recorded distance is within 1 ft of the distance travelled. & \\\hline
+  3.3.2 & battery power & Activate the System.  Observe that the system reports an estimate of remaining battery power to within 10\% of the manufacturer provided model of the battery's power. & \\\hline
+  3.3.3 & motor power & Place the System in such a way as the motion system is able to travel freely.  Activate the System and command it to travel forward.  Observe that the power dissapated by the motors as measured by a test equipment is within 10\% of the dissipation reported by the System. & \\\hline
+  4.1.1 & speed limit & Activate the System on a flat, smooth surface and command it to travel forward 10 seconds.  Measure the distance traveled and ensure that the system travels at no more than 3 mph. & \\\hline
+  4.1.2 & rotation speed & Activate the System on a flat, smooth surface and command it to rotate 360 degrees.  Record the amount of time required to rotate, ensure that it is no less than 6 degrees per second. & \\\hline
+
+\end{tabular}
+
+\end{document}

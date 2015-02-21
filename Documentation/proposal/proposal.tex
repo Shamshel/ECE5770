@@ -1,0 +1,46 @@
+\documentclass[dvips,12pt]{article}
+
+% Any percent sign marks a comment to the end of the line
+
+% Every latex document starts with a documentclass declaration like this
+% The option dvips allows for graphics, 12pt is the font size, and article
+%   is the style
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+
+% These are additional packages for "pdflatex", graphics, and to include
+% hyperlinks inside a document.
+
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% These force using more of the margins that is the default style
+
+\begin{document}
+
+\title{ECE5770+ECE5780 Project:\\Remote Rover Training System}
+\author{Cody Herndon}
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+
+On July 4, 1997 the Mars Pathfinder landed on Mar's Ares Vallis and deployed the Sojourner rover to the Martian surface.  Working on the motto ``faster, better and cheaper'', the Pathfinder mission team had successfully landed an unmanned probe and rover on Mars with a budget of $\frac{1}{15}$\textsuperscript{th} the cost of the previous Mars probes, the Viking missions.  Shortly after what was considered a ``flawless'' landing, the Pathfinder team experienced a malfunction that became infamous in software engineering interviews the world over: a priority inversion in its Real Time Operating System (RTOS).  Due to clever design, the Pathfinder team was able to download an updated version of the operating system to the rover, solving the priority inversion and prolonging the mission.
+
+This project proposes to build an inexpensive rover platform with a modern microprocessor, commercially available chassis, various sensors, and a wireless communications module to serve as an inexpensive test bed for the design and implementation of RTOS to give developers the opportunity to practice the fundamentals of good design with constrained resources.
+
+\section{Outcomes}
+
+This project is intended to fulfil objectives of both ECE5770: Microcomputer Interfacing and ECE 5789: Real Time Systems.  This project will complete with the construction of a rover which is capable of wireless, bidirectional communication with a laptop base station.  The rover should be capable of transmitting the readings from a suite of sensors that may include battery power readings, GPS coordinates, accelerometer readings, and distance travelled as computed by shaft encoders.  Similarly, the rover should be capable of receiving instructions, such as turning a certain number of degrees or travelling forward or reverse a set distance, and executing these commands to as high an accuracy as the on-board sensors will allow.  Finally, in order to provide a complete test suite, the rover should be capable of operating system updates over the wireless interface so the remote base station to apply bug fixes without the need to collect the vehicle.
+
+In the spirit of the Sojourner rover deployed from Pathfinder, the resulting rover should be as inexpensive, and simple as possible within these constraints, i.e. ``faster, better and cheaper''.
+
+\section{Risks}
+
+The hardware required to construct the system is largely easily available as Commercial Off the Shelf (COTS) and many of the components such as the microprocessor, GPS module, and wireless transceiver are already available to the designer.  The primary difficulty will likely arise from the implementation of the RTOS, as the software requirements may prove to be rather complicated.  Interfacing each sensor, gathering the data from the sensors, and relaying information to and from the base station in a timely manner is a potentially daunting task and will require a significant time investment in software planning and development.
+
+\end{document}
