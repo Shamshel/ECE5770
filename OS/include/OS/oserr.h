@@ -1,0 +1,32 @@
+//oserr.h
+
+#ifndef OSERR_H
+#define OSERR_H
+
+//this header defines standard error codes for the operating system
+
+#define OS_SUCCESS 0
+
+/*
+ *
+ * MPI errors
+ * 1000-1099
+ *
+ */
+#define E_MPI_INVALID_SRC_PID 1000
+#define E_MPI_INVALID_DST_PID 1001
+#define E_MPI_OVERSIZED_MSG 1002
+#define E_MPI_MAILBOX_BUF_OVERFLOW 1003
+#define E_MPI_INVALID_RCV_PID 1004
+#define E_MPI_NO_MSG_AVAILABLE 1005
+
+/*
+ *
+ * Kernel errors
+ * 2000-2099
+ *
+ */
+#define E_KERNEL_TASK_OVERFLOW 2000
+#define E_KERNEL_TERMINATE 2001
+
+#endif

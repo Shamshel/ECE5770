@@ -1,0 +1,14 @@
+//sysconfig.h
+
+#ifndef SYSCONFIG_H
+#define SYSCONFIG_H
+
+//PID assignements
+#define OS_PID 0
+
+//MPI constants
+#define MESSAGE_SIZE 128
+#define MAILBOX_SIZE 128
+#define MPI_SIZE 10 //must be no smaller than the largest PID
+
+#endif
