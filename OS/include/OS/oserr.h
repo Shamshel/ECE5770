@@ -3,7 +3,27 @@
 #ifndef OSERR_H
 #define OSERR_H
 
-//this header defines standard error codes for the operating system
+/*
+ *
+ * reserve range 3000-7999 for server error codes
+ * 
+ * Main Controller: 3000-3999
+ * Wi-Fi Controller: 4000-4999
+ * Console Controller: 5000-5999
+ * GPS Controller: 6000-6999
+ * IO Controllers: 7000-7999
+ *
+ */
+
+//reserve range 7000-9999 for message opcodes
+
+/*
+ *
+ * Command Message: 7000-7999
+ * Request Message: 8000-8999
+ * Error Handling Message: 9000-9999
+ *
+/*
 
 #define OS_SUCCESS 0
 

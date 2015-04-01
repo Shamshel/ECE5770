@@ -9,4 +9,6 @@
 
 #include "sysConfig.h"
 
+//TODO: add message opcodes
+
 #endif
