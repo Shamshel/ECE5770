@@ -5,10 +5,12 @@
 
 #define OS_memcpy function_OS_memcpy
 
+#include <stdbool.h>
+
 //define boolean type
-typedef int bool;
+/*typedef int bool;
 #define true 1
-#define false 0
+#define false 0*/
 
 extern void OS_memcpy(void* destination, const void* source, unsigned int num);
 

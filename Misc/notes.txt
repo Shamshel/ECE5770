@@ -1,0 +1,17 @@
+Modular c programming:
+http://www.embedded.com/design/prototyping-and-development/4023876/Modular-Programming-in-C
+
+Tiva-C cross compiler setup:
+http://www.scienceprog.com/setting-up-tiva-c-launchpad-project-template-with-sourcery-codebench-and-eclipse/
+
+Tiva-C software drivers:
+http://software-dl.ti.com/tiva-c/SW-TM4C/latest/index_FDS.html
+
+Stellaris (Old Tiva-C) setup guide for eclipse:
+http://kernelhacks.blogspot.com/2012/11/the-complete-tutorial-for-stellaris_25.html
+
+GCC ARM cross compiler:
+https://launchpad.net/gcc-arm-embedded
+
+cli only programming:
+https://rrt2x7.wordpress.com/embedded/

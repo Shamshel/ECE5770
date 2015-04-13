@@ -9,6 +9,10 @@
 
 #include "sysConfig.h"
 
+
+#include "OS/MPI.h"
+#include "OS/Kernel.h"
+
 //TODO: add message opcodes
 
 #endif

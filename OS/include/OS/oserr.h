@@ -3,6 +3,8 @@
 #ifndef OSERR_H
 #define OSERR_H
 
+#define OS_SUCCESS 0
+
 /*
  *
  * reserve range 3000-7999 for server error codes
@@ -23,9 +25,7 @@
  * Request Message: 8000-8999
  * Error Handling Message: 9000-9999
  *
-/*
-
-#define OS_SUCCESS 0
+ */
 
 /*
  *

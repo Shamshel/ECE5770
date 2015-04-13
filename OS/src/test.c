@@ -1,8 +1,6 @@
 //test.c
 
 #include "OS/OS.h"
-#include "OS/MPI.h"
-#include "OS/Kernel.h"
 
 #include "stdio.h"
 #include "CUnit/Basic.h"
