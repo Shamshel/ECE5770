@@ -28,3 +28,4 @@ OpenOCD notes:
 	gdb debugging (needs debugging flags enabled in Makefile):
 		arm-none-eabi-gdb main.axf
 		target remote localhost:333
+		

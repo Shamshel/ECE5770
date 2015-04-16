@@ -4,26 +4,453 @@ Info : tm4c123gh6pm.cpu: hardware has 6 breakpoints, 4 watchpoints
 Info : accepting 'telnet' connection from 4444
 target state: halted
 target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x00000274 msp: 0x20000100
-auto erase enabled
-Error: couldn't open main.bin
-in procedure 'flash'
-Info : dropped 'telnet' connection
-Info : accepting 'telnet' connection from 4444
+xPSR: 0x01000000 pc: 0x00000704 msp: 0x20003a70
+wrote 9360 bytes from file main.bin to flash bank 0 at offset 0x00000000 in 0.572001s (15.980 KiB/s)
 target state: halted
 target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x00000274 msp: 0x20000100
-auto erase enabled
-wrote 10240 bytes from file main.bin in 0.744561s (13.431 KiB/s)
-Error: memory read failed: 0x7
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 100ms
-Polling target tm4c123gh6pm.cpu succeeded again
-Info : dropped 'telnet' connection
-Info : accepting 'telnet' connection from 4444
+xPSR: 0x01000000 pc: 0x00000704 msp: 0x20003a70
+wrote 9636 bytes from file main.bin to flash bank 0 at offset 0x00000000 in 0.581141s (16.193 KiB/s)
 target state: halted
 target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x00000718 msp: 0x20003a70
+xPSR: 0x01000000 pc: 0x00000704 msp: 0x20003a70
+wrote 808 bytes from file blinky.bin to flash bank 0 at offset 0x00000000 in 0.167963s (4.698 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000704 msp: 0x20003a70
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000704 msp: 0x20003a70
+flash 'stellaris' found at 0x00000000
+#0 : stellaris at 0x00000000, size 0x00040000, buswidth 0, chipwidth 0
+	#  0: 0x00000000 (0x400 1kB) not protected
+	#  1: 0x00000400 (0x400 1kB) not protected
+	#  2: 0x00000800 (0x400 1kB) not protected
+	#  3: 0x00000c00 (0x400 1kB) not protected
+	#  4: 0x00001000 (0x400 1kB) not protected
+	#  5: 0x00001400 (0x400 1kB) not protected
+	#  6: 0x00001800 (0x400 1kB) not protected
+	#  7: 0x00001c00 (0x400 1kB) not protected
+	#  8: 0x00002000 (0x400 1kB) not protected
+	#  9: 0x00002400 (0x400 1kB) not protected
+	# 10: 0x00002800 (0x400 1kB) not protected
+	# 11: 0x00002c00 (0x400 1kB) not protected
+	# 12: 0x00003000 (0x400 1kB) not protected
+	# 13: 0x00003400 (0x400 1kB) not protected
+	# 14: 0x00003800 (0x400 1kB) not protected
+	# 15: 0x00003c00 (0x400 1kB) not protected
+	# 16: 0x00004000 (0x400 1kB) not protected
+	# 17: 0x00004400 (0x400 1kB) not protected
+	# 18: 0x00004800 (0x400 1kB) not protected
+	# 19: 0x00004c00 (0x400 1kB) not protected
+	# 20: 0x00005000 (0x400 1kB) not protected
+	# 21: 0x00005400 (0x400 1kB) not protected
+	# 22: 0x00005800 (0x400 1kB) not protected
+	# 23: 0x00005c00 (0x400 1kB) not protected
+	# 24: 0x00006000 (0x400 1kB) not protected
+	# 25: 0x00006400 (0x400 1kB) not protected
+	# 26: 0x00006800 (0x400 1kB) not protected
+	# 27: 0x00006c00 (0x400 1kB) not protected
+	# 28: 0x00007000 (0x400 1kB) not protected
+	# 29: 0x00007400 (0x400 1kB) not protected
+	# 30: 0x00007800 (0x400 1kB) not protected
+	# 31: 0x00007c00 (0x400 1kB) not protected
+	# 32: 0x00008000 (0x400 1kB) not protected
+	# 33: 0x00008400 (0x400 1kB) not protected
+	# 34: 0x00008800 (0x400 1kB) not protected
+	# 35: 0x00008c00 (0x400 1kB) not protected
+	# 36: 0x00009000 (0x400 1kB) not protected
+	# 37: 0x00009400 (0x400 1kB) not protected
+	# 38: 0x00009800 (0x400 1kB) not protected
+	# 39: 0x00009c00 (0x400 1kB) not protected
+	# 40: 0x0000a000 (0x400 1kB) not protected
+	# 41: 0x0000a400 (0x400 1kB) not protected
+	# 42: 0x0000a800 (0x400 1kB) not protected
+	# 43: 0x0000ac00 (0x400 1kB) not protected
+	# 44: 0x0000b000 (0x400 1kB) not protected
+	# 45: 0x0000b400 (0x400 1kB) not protected
+	# 46: 0x0000b800 (0x400 1kB) not protected
+	# 47: 0x0000bc00 (0x400 1kB) not protected
+	# 48: 0x0000c000 (0x400 1kB) not protected
+	# 49: 0x0000c400 (0x400 1kB) not protected
+	# 50: 0x0000c800 (0x400 1kB) not protected
+	# 51: 0x0000cc00 (0x400 1kB) not protected
+	# 52: 0x0000d000 (0x400 1kB) not protected
+	# 53: 0x0000d400 (0x400 1kB) not protected
+	# 54: 0x0000d800 (0x400 1kB) not protected
+	# 55: 0x0000dc00 (0x400 1kB) not protected
+	# 56: 0x0000e000 (0x400 1kB) not protected
+	# 57: 0x0000e400 (0x400 1kB) not protected
+	# 58: 0x0000e800 (0x400 1kB) not protected
+	# 59: 0x0000ec00 (0x400 1kB) not protected
+	# 60: 0x0000f000 (0x400 1kB) not protected
+	# 61: 0x0000f400 (0x400 1kB) not protected
+	# 62: 0x0000f800 (0x400 1kB) not protected
+	# 63: 0x0000fc00 (0x400 1kB) not protected
+	# 64: 0x00010000 (0x400 1kB) not protected
+	# 65: 0x00010400 (0x400 1kB) not protected
+	# 66: 0x00010800 (0x400 1kB) not protected
+	# 67: 0x00010c00 (0x400 1kB) not protected
+	# 68: 0x00011000 (0x400 1kB) not protected
+	# 69: 0x00011400 (0x400 1kB) not protected
+	# 70: 0x00011800 (0x400 1kB) not protected
+	# 71: 0x00011c00 (0x400 1kB) not protected
+	# 72: 0x00012000 (0x400 1kB) not protected
+	# 73: 0x00012400 (0x400 1kB) not protected
+	# 74: 0x00012800 (0x400 1kB) not protected
+	# 75: 0x00012c00 (0x400 1kB) not protected
+	# 76: 0x00013000 (0x400 1kB) not protected
+	# 77: 0x00013400 (0x400 1kB) not protected
+	# 78: 0x00013800 (0x400 1kB) not protected
+	# 79: 0x00013c00 (0x400 1kB) not protected
+	# 80: 0x00014000 (0x400 1kB) not protected
+	# 81: 0x00014400 (0x400 1kB) not protected
+	# 82: 0x00014800 (0x400 1kB) not protected
+	# 83: 0x00014c00 (0x400 1kB) not protected
+	# 84: 0x00015000 (0x400 1kB) not protected
+	# 85: 0x00015400 (0x400 1kB) not protected
+	# 86: 0x00015800 (0x400 1kB) not protected
+	# 87: 0x00015c00 (0x400 1kB) not protected
+	# 88: 0x00016000 (0x400 1kB) not protected
+	# 89: 0x00016400 (0x400 1kB) not protected
+	# 90: 0x00016800 (0x400 1kB) not protected
+	# 91: 0x00016c00 (0x400 1kB) not protected
+	# 92: 0x00017000 (0x400 1kB) not protected
+	# 93: 0x00017400 (0x400 1kB) not protected
+	# 94: 0x00017800 (0x400 1kB) not protected
+	# 95: 0x00017c00 (0x400 1kB) not protected
+	# 96: 0x00018000 (0x400 1kB) not protected
+	# 97: 0x00018400 (0x400 1kB) not protected
+	# 98: 0x00018800 (0x400 1kB) not protected
+	# 99: 0x00018c00 (0x400 1kB) not protected
+	#100: 0x00019000 (0x400 1kB) not protected
+	#101: 0x00019400 (0x400 1kB) not protected
+	#102: 0x00019800 (0x400 1kB) not protected
+	#103: 0x00019c00 (0x400 1kB) not protected
+	#104: 0x0001a000 (0x400 1kB) not protected
+	#105: 0x0001a400 (0x400 1kB) not protected
+	#106: 0x0001a800 (0x400 1kB) not protected
+	#107: 0x0001ac00 (0x400 1kB) not protected
+	#108: 0x0001b000 (0x400 1kB) not protected
+	#109: 0x0001b400 (0x400 1kB) not protected
+	#110: 0x0001b800 (0x400 1kB) not protected
+	#111: 0x0001bc00 (0x400 1kB) not protected
+	#112: 0x0001c000 (0x400 1kB) not protected
+	#113: 0x0001c400 (0x400 1kB) not protected
+	#114: 0x0001c800 (0x400 1kB) not protected
+	#115: 0x0001cc00 (0x400 1kB) not protected
+	#116: 0x0001d000 (0x400 1kB) not protected
+	#117: 0x0001d400 (0x400 1kB) not protected
+	#118: 0x0001d800 (0x400 1kB) not protected
+	#119: 0x0001dc00 (0x400 1kB) not protected
+	#120: 0x0001e000 (0x400 1kB) not protected
+	#121: 0x0001e400 (0x400 1kB) not protected
+	#122: 0x0001e800 (0x400 1kB) not protected
+	#123: 0x0001ec00 (0x400 1kB) not protected
+	#124: 0x0001f000 (0x400 1kB) not protected
+	#125: 0x0001f400 (0x400 1kB) not protected
+	#126: 0x0001f800 (0x400 1kB) not protected
+	#127: 0x0001fc00 (0x400 1kB) not protected
+	#128: 0x00020000 (0x400 1kB) not protected
+	#129: 0x00020400 (0x400 1kB) not protected
+	#130: 0x00020800 (0x400 1kB) not protected
+	#131: 0x00020c00 (0x400 1kB) not protected
+	#132: 0x00021000 (0x400 1kB) not protected
+	#133: 0x00021400 (0x400 1kB) not protected
+	#134: 0x00021800 (0x400 1kB) not protected
+	#135: 0x00021c00 (0x400 1kB) not protected
+	#136: 0x00022000 (0x400 1kB) not protected
+	#137: 0x00022400 (0x400 1kB) not protected
+	#138: 0x00022800 (0x400 1kB) not protected
+	#139: 0x00022c00 (0x400 1kB) not protected
+	#140: 0x00023000 (0x400 1kB) not protected
+	#141: 0x00023400 (0x400 1kB) not protected
+	#142: 0x00023800 (0x400 1kB) not protected
+	#143: 0x00023c00 (0x400 1kB) not protected
+	#144: 0x00024000 (0x400 1kB) not protected
+	#145: 0x00024400 (0x400 1kB) not protected
+	#146: 0x00024800 (0x400 1kB) not protected
+	#147: 0x00024c00 (0x400 1kB) not protected
+	#148: 0x00025000 (0x400 1kB) not protected
+	#149: 0x00025400 (0x400 1kB) not protected
+	#150: 0x00025800 (0x400 1kB) not protected
+	#151: 0x00025c00 (0x400 1kB) not protected
+	#152: 0x00026000 (0x400 1kB) not protected
+	#153: 0x00026400 (0x400 1kB) not protected
+	#154: 0x00026800 (0x400 1kB) not protected
+	#155: 0x00026c00 (0x400 1kB) not protected
+	#156: 0x00027000 (0x400 1kB) not protected
+	#157: 0x00027400 (0x400 1kB) not protected
+	#158: 0x00027800 (0x400 1kB) not protected
+	#159: 0x00027c00 (0x400 1kB) not protected
+	#160: 0x00028000 (0x400 1kB) not protected
+	#161: 0x00028400 (0x400 1kB) not protected
+	#162: 0x00028800 (0x400 1kB) not protected
+	#163: 0x00028c00 (0x400 1kB) not protected
+	#164: 0x00029000 (0x400 1kB) not protected
+	#165: 0x00029400 (0x400 1kB) not protected
+	#166: 0x00029800 (0x400 1kB) not protected
+	#167: 0x00029c00 (0x400 1kB) not protected
+	#168: 0x0002a000 (0x400 1kB) not protected
+	#169: 0x0002a400 (0x400 1kB) not protected
+	#170: 0x0002a800 (0x400 1kB) not protected
+	#171: 0x0002ac00 (0x400 1kB) not protected
+	#172: 0x0002b000 (0x400 1kB) not protected
+	#173: 0x0002b400 (0x400 1kB) not protected
+	#174: 0x0002b800 (0x400 1kB) not protected
+	#175: 0x0002bc00 (0x400 1kB) not protected
+	#176: 0x0002c000 (0x400 1kB) not protected
+	#177: 0x0002c400 (0x400 1kB) not protected
+	#178: 0x0002c800 (0x400 1kB) not protected
+	#179: 0x0002cc00 (0x400 1kB) not protected
+	#180: 0x0002d000 (0x400 1kB) not protected
+	#181: 0x0002d400 (0x400 1kB) not protected
+	#182: 0x0002d800 (0x400 1kB) not protected
+	#183: 0x0002dc00 (0x400 1kB) not protected
+	#184: 0x0002e000 (0x400 1kB) not protected
+	#185: 0x0002e400 (0x400 1kB) not protected
+	#186: 0x0002e800 (0x400 1kB) not protected
+	#187: 0x0002ec00 (0x400 1kB) not protected
+	#188: 0x0002f000 (0x400 1kB) not protected
+	#189: 0x0002f400 (0x400 1kB) not protected
+	#190: 0x0002f800 (0x400 1kB) not protected
+	#191: 0x0002fc00 (0x400 1kB) not protected
+	#192: 0x00030000 (0x400 1kB) not protected
+	#193: 0x00030400 (0x400 1kB) not protected
+	#194: 0x00030800 (0x400 1kB) not protected
+	#195: 0x00030c00 (0x400 1kB) not protected
+	#196: 0x00031000 (0x400 1kB) not protected
+	#197: 0x00031400 (0x400 1kB) not protected
+	#198: 0x00031800 (0x400 1kB) not protected
+	#199: 0x00031c00 (0x400 1kB) not protected
+	#200: 0x00032000 (0x400 1kB) not protected
+	#201: 0x00032400 (0x400 1kB) not protected
+	#202: 0x00032800 (0x400 1kB) not protected
+	#203: 0x00032c00 (0x400 1kB) not protected
+	#204: 0x00033000 (0x400 1kB) not protected
+	#205: 0x00033400 (0x400 1kB) not protected
+	#206: 0x00033800 (0x400 1kB) not protected
+	#207: 0x00033c00 (0x400 1kB) not protected
+	#208: 0x00034000 (0x400 1kB) not protected
+	#209: 0x00034400 (0x400 1kB) not protected
+	#210: 0x00034800 (0x400 1kB) not protected
+	#211: 0x00034c00 (0x400 1kB) not protected
+	#212: 0x00035000 (0x400 1kB) not protected
+	#213: 0x00035400 (0x400 1kB) not protected
+	#214: 0x00035800 (0x400 1kB) not protected
+	#215: 0x00035c00 (0x400 1kB) not protected
+	#216: 0x00036000 (0x400 1kB) not protected
+	#217: 0x00036400 (0x400 1kB) not protected
+	#218: 0x00036800 (0x400 1kB) not protected
+	#219: 0x00036c00 (0x400 1kB) not protected
+	#220: 0x00037000 (0x400 1kB) not protected
+	#221: 0x00037400 (0x400 1kB) not protected
+	#222: 0x00037800 (0x400 1kB) not protected
+	#223: 0x00037c00 (0x400 1kB) not protected
+	#224: 0x00038000 (0x400 1kB) not protected
+	#225: 0x00038400 (0x400 1kB) not protected
+	#226: 0x00038800 (0x400 1kB) not protected
+	#227: 0x00038c00 (0x400 1kB) not protected
+	#228: 0x00039000 (0x400 1kB) not protected
+	#229: 0x00039400 (0x400 1kB) not protected
+	#230: 0x00039800 (0x400 1kB) not protected
+	#231: 0x00039c00 (0x400 1kB) not protected
+	#232: 0x0003a000 (0x400 1kB) not protected
+	#233: 0x0003a400 (0x400 1kB) not protected
+	#234: 0x0003a800 (0x400 1kB) not protected
+	#235: 0x0003ac00 (0x400 1kB) not protected
+	#236: 0x0003b000 (0x400 1kB) not protected
+	#237: 0x0003b400 (0x400 1kB) not protected
+	#238: 0x0003b800 (0x400 1kB) not protected
+	#239: 0x0003bc00 (0x400 1kB) not protected
+	#240: 0x0003c000 (0x400 1kB) not protected
+	#241: 0x0003c400 (0x400 1kB) not protected
+	#242: 0x0003c800 (0x400 1kB) not protected
+	#243: 0x0003cc00 (0x400 1kB) not protected
+	#244: 0x0003d000 (0x400 1kB) not protected
+	#245: 0x0003d400 (0x400 1kB) not protected
+	#246: 0x0003d800 (0x400 1kB) not protected
+	#247: 0x0003dc00 (0x400 1kB) not protected
+	#248: 0x0003e000 (0x400 1kB) not protected
+	#249: 0x0003e400 (0x400 1kB) not protected
+	#250: 0x0003e800 (0x400 1kB) not protected
+	#251: 0x0003ec00 (0x400 1kB) not protected
+	#252: 0x0003f000 (0x400 1kB) not protected
+	#253: 0x0003f400 (0x400 1kB) not protected
+	#254: 0x0003f800 (0x400 1kB) not protected
+	#255: 0x0003fc00 (0x400 1kB) not protected
+
+TI/LMI Stellaris information: Chip is class 5 (Blizzard) LM4F230H5QR rev B1
+did1: 0x10a1606c, arch: 0x10a1606c, eproc: ARMv7M, ramsize: 32k, flashsize: 256k
+master clock: 16000kHz (±1%), rcc is 0x7c06810, rcc2 is 0x0
+pagesize: 1024, pages: 256, lockbits: 128, pages per lockbit: 2
+
+  stellaris mass_erase <bank>
+in procedure 'stellaris'
 auto erase enabled
-wrote 10240 bytes from file main.bin in 0.797955s (12.532 KiB/s)
+wrote 1024 bytes from file blinky.bin in 0.202826s (4.930 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x000002d4 msp: 0x20000100
+auto erase enabled
+wrote 10240 bytes from file main.bin in 0.805670s (12.412 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000818 msp: 0x20003aa0
+Info : accepting 'gdb' connection from 3333
+Warn : acknowledgment received, but no packet pending
+Info : dropped 'gdb' connection
+Info : accepting 'gdb' connection from 3333
+Warn : acknowledgment received, but no packet pending
+Info : dropped 'gdb' connection
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000818 msp: 0x20003aa0
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000818 msp: 0x20003aa0
+auto erase enabled
+wrote 2048 bytes from file main.bin in 0.265114s (7.544 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000310 msp: 0x20000100
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000310 msp: 0x20000100
+auto erase enabled
+wrote 2048 bytes from file main.bin in 0.264611s (7.558 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000310 msp: 0x20000100
+Info : accepting 'gdb' connection from 3333
+Warn : acknowledgment received, but no packet pending
+Info : dropped 'gdb' connection
+Info : accepting 'gdb' connection from 3333
+Warn : acknowledgment received, but no packet pending
+Info : dropped 'gdb' connection
+Info : accepting 'gdb' connection from 3333
+Warn : acknowledgment received, but no packet pending
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000310 msp: 0x20000100
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : halted: PC: 0x000003a6
+Info : halted: PC: 0x000003a8
+Info : The target is not running when halt was requested, stopping GDB.
+Info : The target is not running when halt was requested, stopping GDB.
+Info : The target is not running when halt was requested, stopping GDB.
+Info : halted: PC: 0x000003a6
+Info : dropped 'gdb' connection
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000310 msp: 0x20000100
+auto erase enabled
+wrote 2048 bytes from file main.bin in 0.267038s (7.490 KiB/s)
+Error: Invalid command argument
+halt [milliseconds]
+reset [run|halt|init]
+soft_reset_halt   tm4c123gh6pm.cpu arp_halt
+  tm4c123gh6pm.cpu arp_halt_gdb
+wait_halt [milliseconds]
+in procedure 'halt'
+  jtag arp_init-reset power_restore
+program <filename> [address] [verify] [reset]
+reset [run|halt|init]
+reset_config [none|trst_only|srst_only|trst_and_srst]
+          [srst_pulls_trst|trst_pulls_srst|combined|separate]
+          [srst_gates_jtag|srst_nogate] [trst_push_pull|trst_open_drain]
+          [srst_push_pull|srst_open_drain]
+reset_nag ['enable'|'disable']
+soft_reset_halt srst_deasserted
+  tm4c123gh6pm.cpu arp_examine
+  tm4c123gh6pm.cpu arp_halt
+  tm4c123gh6pm.cpu arp_halt_gdb
+  tm4c123gh6pm.cpu arp_poll
+  tm4c123gh6pm.cpu arp_reset
+  tm4c123gh6pm.cpu arp_waitstate
+in procedure 'reset'
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x000005a0 msp: 0x200036a0
+  jtag arp_init-reset power_restore
+program <filename> [address] [verify] [reset]
+reset [run|halt|init]
+reset_config [none|trst_only|srst_only|trst_and_srst]
+          [srst_pulls_trst|trst_pulls_srst|combined|separate]
+          [srst_gates_jtag|srst_nogate] [trst_push_pull|trst_open_drain]
+          [srst_push_pull|srst_open_drain]
+reset_nag ['enable'|'disable']
+soft_reset_halt srst_deasserted
+  tm4c123gh6pm.cpu arp_examine
+  tm4c123gh6pm.cpu arp_halt
+  tm4c123gh6pm.cpu arp_halt_gdb
+  tm4c123gh6pm.cpu arp_poll
+  tm4c123gh6pm.cpu arp_reset
+  tm4c123gh6pm.cpu arp_waitstate
+in procedure 'reset'
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x000005a0 msp: 0x200036a0
+auto erase enabled
+wrote 2048 bytes from file main.bin in 0.270060s (7.406 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000624 msp: 0x200036a0
 Info : dropped 'telnet' connection
