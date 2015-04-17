@@ -16,6 +16,12 @@ https://launchpad.net/gcc-arm-embedded
 cli only programming:
 https://rrt2x7.wordpress.com/embedded/
 
+remote and gui gdb instructions:
+http://fun-tech.se/stm32/OpenOCD/gdb.php
+
+connect to serial device:
+	screen /dev/ttyS0 <baud>
+
 OpenOCD notes:
 	raw interface:
 		telent localhost 4444
@@ -28,4 +34,3 @@ OpenOCD notes:
 	gdb debugging (needs debugging flags enabled in Makefile):
 		arm-none-eabi-gdb main.axf
 		target remote localhost:333
-		

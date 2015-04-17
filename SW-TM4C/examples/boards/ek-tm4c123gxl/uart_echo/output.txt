@@ -1,0 +1,27 @@
+Info : This adapter doesn't support configurable speed
+Info : ICDI Firmware version: 9270
+Info : tm4c123gh6pm.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : accepting 'telnet' connection from 4444
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000724 msp: 0x20000214
+auto erase enabled
+wrote 2048 bytes from file uart_echo.bin in 0.272434s (7.341 KiB/s)
+Info : dropped 'telnet' connection
+Info : accepting 'telnet' connection from 4444
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000274 msp: 0x20000100
+auto erase enabled
+Error: Target not halted
+Error: failed erasing sectors 0 to 1
+in procedure 'flash'
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000274 msp: 0x20000100
+auto erase enabled
+wrote 2048 bytes from file uart_echo.bin in 0.266861s (7.495 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000274 msp: 0x20000100
+Info : dropped 'telnet' connection

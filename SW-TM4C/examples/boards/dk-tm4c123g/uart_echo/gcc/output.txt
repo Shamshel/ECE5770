@@ -1,0 +1,3 @@
+Info : This adapter doesn't support configurable speed
+Info : ICDI Firmware version: 9270
+Info : tm4c123gh6pm.cpu: hardware has 6 breakpoints, 4 watchpoints

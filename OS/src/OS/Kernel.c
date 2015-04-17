@@ -1,7 +1,14 @@
 //Kernel.c
 
 //includes
+//OS base
 #include "OS/OS.h"
+
+//hardware defines
+#include "OS/hardware_drivers.h"
+
+//tasks
+#include "Tasks/UART_driver.h"
 
 //this array determines the schedule that the system will run
 static task_ptr_t schedule[NUM_TASKS];
@@ -55,7 +62,11 @@ void Kernel_run()
   // Enable the GPIO pins for the LED (PF2).
   ROM_GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
 
-  Kernel_register_function(dummy_function);
+  //task inits
+  UART_init();
+
+  //Kernel_register_function(dummy_function);
+  Kernel_register_function(UART_run);
 
   while(done == false)
     {
