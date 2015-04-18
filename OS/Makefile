@@ -5,7 +5,7 @@ OBCPY=arm-none-eabi-objcopy
 PART=TM4C123GH6PM
 
 # For release, remove the '-g' to remove debugging flags
-CFLAGS=-mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -ffunction-sections -fdata-sections -MD -std=c99 -Wall -pedantic -DPART_TM4C123GH6PM -c -DTARGET_IS_BLIZZARD_RB1 -Dgcc -I/usr/lib/arm-none-eabi/include -L/usr/lib/arm-none-eabi/newlib -g
+CFLAGS=-mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -ffunction-sections -fdata-sections -MD -std=c99 -Wall -pedantic -DPART_TM4C123GH6PM -c -DTARGET_IS_BLIZZARD_RB1 -Dgcc -I/usr/lib/arm-none-eabi/include -L/usr/lib/arm-none-eabi/newlib
 TEST_CFLAGS=-lcunit
 OBJ_COPY_FLAGS=-O binary
 LDFLAGS=--entry ResetISR --gc-sections '/usr/lib64/gcc/arm-none-eabi/4.8.1/../../../../arm-none-eabi/lib/thumb/libm.a' '/usr/lib64/gcc/arm-none-eabi/4.8.1/../../../../arm-none-eabi/lib/thumb/libc.a' '/usr/lib64/gcc/arm-none-eabi/4.8.1/thumb/libgcc.a' -T OS.ld
@@ -53,6 +53,15 @@ UART_DRIVER_DEPS=$(addprefix $(SRC_DIR)/$(TASK_DIR)/,$(_UART_DRIVER_DEPS))
 _UART_DRIVER_INCL=UART_driver.h
 UART_DRIVER_INCL=$(addprefix $(INCLUDE_DIR)/$(TASK_DIR)/,$(_UART_DRIVER_INCL))
 
+WIFI_DRIVER=Wi-Fi_driver
+_WIFI_DRIVER_OBJ=$(addsuffix .o,$(WIFI_DRIVER))
+WIFI_DRIVER_OBJ=$(addprefix $(OBJ_DIR)/,$(_WIFI_DRIVER_OBJ))
+
+_WIFI_DRIVER_DEPS=Wi-Fi_driver.c
+WIFI_DRIVER_DEPS=$(addprefix $(SRC_DIR)/$(TASK_DIR)/,$(_WIFI_DRIVER_DEPS))
+_WIFI_DRIVER_INCL=Wi-Fi_driver.h
+WIFI_DRIVER_INCL=$(addprefix $(INCLUDE_DIR)/$(TASK_DIR)/,$(_WIFI_DRIVER_INCL))
+
 _SYS_INCL=OS.h oserr.h sysConfig.h
 SYS_INCL=$(addprefix $(INCLUDE_DIR)/$(OS_DIR)/,$(_OS_INCL))
 
@@ -81,7 +90,7 @@ TIVA_DRIVER=driver
 $(MAIN_BIN): $(MAIN_AXF)
 	$(OBCPY) $(OBJ_COPY_FLAGS) $< $@
 
-$(MAIN_AXF): $(MAIN_OBJ) $(KERNEL_OBJ) $(MPI_OBJ) $(OSLib_OBJ) $(STARTUP_OBJ) $(UART_DRIVER_OBJ)
+$(MAIN_AXF): $(MAIN_OBJ) $(KERNEL_OBJ) $(MPI_OBJ) $(OSLib_OBJ) $(STARTUP_OBJ) $(WIFI_DRIVER_OBJ)
 	$(LD) -o $@ $^ -L./$(INCLUDE_DIR)/$(LINK_DIRECTORY) -l$(TIVA_DRIVER) $(LDFLAGS)
 
 $(MAIN) $(MAIN_OBJ): $(MAIN_DEP) $(SYS_INCL)
@@ -97,6 +106,9 @@ $(MPI) $(MPI_OBJ): $(MPI_DEPS) $(MPI_INCL)
 	$(CC) -c -o $@ -I $(INCLUDE_DIR)  $< $(CFLAGS)
 
 $(KERNEL) $(KERNEL_OBJ): $(KERNEL_DEPS) $(KERNEL_INCL)
+	$(CC) -c -o $@ -I $(INCLUDE_DIR) $< $(CFLAGS)
+
+$(WIFI_DRIVER) $(WIFI_DRIVER_OBJ): $(WIFI_DRIVER_DEPS) $(WIFI_DRIVER_INCL)
 	$(CC) -c -o $@ -I $(INCLUDE_DIR) $< $(CFLAGS)
 
 $(UART_DRIVER) $(UART_DRIVER_OBJ): $(UART_DRIVER_DEPS) $(UART_DRIVER_INCL)

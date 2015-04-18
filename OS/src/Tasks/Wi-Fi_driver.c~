@@ -1,7 +1,7 @@
-//UART_driver.c
+//Wi-Fi_driver.c
 
-#include "OS/OSLib.h"
-#include "Tasks/UART_driver.h"
+#include "OS/OS.h"
+#include "Tasks/Wi-Fi_driver.h"
 
 static unsigned int sendSize;
 static unsigned char sendBuffer[MESSAGE_SIZE];
@@ -14,7 +14,7 @@ static unsigned char recvBuffer[MESSAGE_SIZE];
 // Send a string to the UART.
 //
 //*****************************************************************************
-void UARTSend()
+void WiFiSend()
 {
   int i;
 
@@ -54,7 +54,7 @@ void UARTReceive()
 // Echo input from the UART.
 //
 //*****************************************************************************
-void UARTEcho()
+void WiFiEcho()
 {
   while(UARTCharsAvail(UART1_BASE) && recvSize < MESSAGE_SIZE)
     {
@@ -78,7 +78,7 @@ void UARTEcho()
 // Send a string to the UART.
 //
 //*****************************************************************************
-void UART_init()
+void WiFi_init()
 {
   sendSize = 0;
   recvSize = 0;
@@ -106,14 +106,14 @@ void UART_init()
 
 }
 
-void UART_run()
+void WiFi_run()
 {
 
   //test program
   //echos incoming characters back out on the same interface
 
   //UARTReceive();
-  UARTEcho();
+  WIFIEcho();
 
   //end test program
 
@@ -130,4 +130,3 @@ void UART_run()
 
 
 }
-

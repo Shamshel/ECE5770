@@ -6,5 +6,10 @@ target state: halted
 target halted due to debug-request, current mode: Thread 
 xPSR: 0x01000000 pc: 0x00000608 msp: 0x200036a0
 auto erase enabled
-wrote 4096 bytes from file main.bin in 0.648829s (6.165 KiB/s)
+wrote 4096 bytes from file main.bin in 0.509700s (7.848 KiB/s)
+target state: halted
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x00000608 msp: 0x200036a0
+auto erase enabled
+wrote 4096 bytes from file main.bin in 0.503836s (7.939 KiB/s)
 Info : dropped 'telnet' connection
