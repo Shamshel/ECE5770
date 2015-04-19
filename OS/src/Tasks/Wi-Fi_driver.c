@@ -1,64 +1,88 @@
 //Wi-Fi_driver.c
 
 #include "OS/OS.h"
+#include "Tasks/UART_driver.h"
 #include "Tasks/Wi-Fi_driver.h"
 
-static unsigned int sendSize;
-static unsigned char sendBuffer[MESSAGE_SIZE];
-
-static unsigned int recvSize;
-static unsigned char recvBuffer[MESSAGE_SIZE];
+static unsigned int bufSize = 0;
+static char msgBuffer[MESSAGE_SIZE];
 
 //*****************************************************************************
 //
-// Send a string to the UART.
+// Send a command to the WiFi board, do not wait for response (reduce blocking overhead)
 //
 //*****************************************************************************
-void WiFiSend()
+
+void WiFiSendCommand(const char* cmd)
 {
-  int i;
-
-  for(i = 0; i<sendSize; i++)
-    {
-      //
-      // Write the next character to the UART.
-      //
-      UARTCharPutNonBlocking(UART2_BASE, sendBuffer[i]);
-    }
-
-  sendSize = 0;
-
-}
-
-void UARTReceive()
-{
-  while(UARTCharsAvail(UART2_BASE) && recvSize < MESSAGE_SIZE)
-    {
-      recvBuffer[recvSize] = UARTCharGet(UART2_BASE);
-      recvSize++;
-
-    }
-
-  //check for newline or max message size
-  if(recvBuffer[recvSize-1] == 0x0A || recvSize == MESSAGE_SIZE)
-    {
-      OS_memcpy(sendBuffer, recvBuffer, recvSize);
-      WiFiSend();
-
-    }
+  UART_send(cmd, WIFI_BASE);
+  UART_send(cmd, CONSOLE_BASE);
 
 }
 
 //*****************************************************************************
 //
-// Echo input from the UART.
+// Send a command to the WiFi board, wait for response
 //
 //*****************************************************************************
+
+bool WiFiSendCommandWait(const char* cmd, const char* resp)
+{
+  UART_send(cmd, WIFI_BASE);
+  UART_send(cmd, CONSOLE_BASE);
+ 
+  //reset buffer
+  bufSize = 0;
+  msgBuffer[bufSize] = 0;
+ 
+  while(bufSize < MESSAGE_SIZE-1)
+    {
+      UART_recv(msgBuffer, WIFI_BASE);
+
+      bufSize = OS_strlen(msgBuffer);
+
+      //newlines are represented by CR+LF
+      //look for line feed at end of line
+      if(msgBuffer[bufSize-1] == '\n')
+	{
+	  //UART_send(msgBuffer, CONSOLE_BASE);
+
+	  if(OS_strcmp(resp, msgBuffer) == 0)
+	    {
+	      UART_send(msgBuffer, CONSOLE_BASE);
+
+	      bufSize = 0;
+	      msgBuffer[bufSize] = 0;
+	  
+	      return true;
+
+	    }
+
+	  bufSize = 0;
+	  msgBuffer[bufSize] = 0;
+	  
+	}
+
+    }
+	  
+  bufSize = 0;
+  msgBuffer[bufSize] = 0;
+
+  return false;
+
+}
+
+//*****************************************************************************
+//
+// Echo input from the WiFi.
+//
+//*****************************************************************************
+/*
 void WiFiEcho()
 {
-  while(UARTCharsAvail(UART2_BASE) && recvSize < MESSAGE_SIZE)
+  while(UARTCharsAvail(WIFI_BASE) && recvSize < MESSAGE_SIZE)
     {
-      recvBuffer[recvSize] = UARTCharGetNonBlocking(UART2_BASE);
+      recvBuffer[recvSize] = UARTCharGetNonBlocking(WIFI_BASE);
       recvSize++;
 
     }
@@ -67,12 +91,12 @@ void WiFiEcho()
     {
       recvSize--;
       
-      UARTCharPutNonBlocking(UART1_BASE, recvBuffer[recvSize]);
+      UARTCharPutNonBlocking(CONSOLE_BASE, recvBuffer[recvSize]);
 
     }
 
 }
-
+*/
 //*****************************************************************************
 //
 // Send a string to the UART.
@@ -80,36 +104,55 @@ void WiFiEcho()
 //*****************************************************************************
 void WiFi_init()
 {
-  sendSize = 0;
-  recvSize = 0;
+  int i = 100;
+  bufSize = 0;
+  msgBuffer[bufSize] = 0;
 
   SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART2);
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART7);
 
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 
-  GPIOPinConfigure(GPIO_PD6_U2RX);
-  GPIOPinConfigure(GPIO_PD7_U2TX);
-  GPIOPinTypeUART(GPIO_PORTD_BASE, GPIO_PIN_6 | GPIO_PIN_7);
+  //delay to avoid bus errors
+  while(i > 0)
+    {
+      i--;
 
+    }
+
+  GPIOPinConfigure(GPIO_PE0_U7RX);
+  GPIOPinConfigure(GPIO_PE1_U7TX);
+  GPIOPinTypeUART(GPIO_PORTE_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+  
   GPIOPinConfigure(GPIO_PB0_U1RX);
   GPIOPinConfigure(GPIO_PB1_U1TX);
   GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_0 | GPIO_PIN_1);  
+  
 
-  UARTConfigSetExpClk(UART2_BASE, SysCtlClockGet(), 9600,
+  UARTConfigSetExpClk(WIFI_BASE, SysCtlClockGet(), 9600,
 			  (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
 			   UART_CONFIG_PAR_NONE));
-
-  UARTConfigSetExpClk(UART1_BASE, SysCtlClockGet(), 9600,
+  
+  UARTConfigSetExpClk(CONSOLE_BASE, SysCtlClockGet(), 9600,
 			  (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
-			   UART_CONFIG_PAR_NONE));
+			  UART_CONFIG_PAR_NONE));
 
-  UARTFIFOEnable(UART2_BASE);
-  UARTFIFOEnable(UART1_BASE);
+  UARTFIFOEnable(WIFI_BASE);
+  UARTFIFOEnable(CONSOLE_BASE);
 
-  UARTEnable(UART2_BASE);
-  UARTEnable(UART1_BASE);
+  UARTEnable(WIFI_BASE);
+  UARTEnable(CONSOLE_BASE);
+
+  //initialize WiFi module
+  WiFiSendCommandWait("AT+RST\r\n", "ready\r\n");
+  WiFiSendCommandWait("AT+CWMODE=2\r\n", "no change\r\n");
+  WiFiSendCommandWait("AT+CIFSR\r\n", "OK\r\n");
+  WiFiSendCommandWait("AT+CIPMUX=1\r\n", "OK\r\n");
+  WiFiSendCommandWait("AT+CIPSERVER=1,80\r\n", "OK\r\n");
+
+  bufSize = 0;
+  msgBuffer[bufSize] = 0;
 
 }
 
@@ -118,9 +161,19 @@ void WiFi_run()
 
   //test program
   //echos incoming characters back out on the same interface
+  UART_recv(msgBuffer, WIFI_BASE);
 
-  //UARTReceive();
-  WiFiEcho();
+  bufSize = OS_strlen(msgBuffer);
+
+  //newlines are represented by CR+LF (\r\n)
+  if(bufSize > 0 && msgBuffer[bufSize-1] == '\n')
+    {
+      UART_send(msgBuffer, CONSOLE_BASE);
+
+      bufSize = 0;
+      msgBuffer[bufSize] = 0;
+      
+    }
 
   //end test program
 

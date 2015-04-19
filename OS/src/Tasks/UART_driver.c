@@ -3,47 +3,35 @@
 #include "OS/OSLib.h"
 #include "Tasks/UART_driver.h"
 
-static unsigned int sendSize;
-static unsigned char sendBuffer[MESSAGE_SIZE];
-
-static unsigned int recvSize;
-static unsigned char recvBuffer[MESSAGE_SIZE];
-
 //*****************************************************************************
 //
 // Send a string to the UART.
 //
 //*****************************************************************************
-void UARTSend()
+void UART_send(const char* msg, uint32_t base)
 {
-  int i;
+  int i = 0;
 
-  for(i = 0; i<sendSize; i++)
+  while(msg[i] != 0)
     {
-      //
-      // Write the next character to the UART.
-      //
-      UARTCharPutNonBlocking(UART1_BASE, sendBuffer[i]);
-    }
+      UARTCharPut(base, msg[i]);
 
-  sendSize = 0;
+      i++;
+
+    }
 
 }
 
-void UARTReceive()
+void UART_recv(char* buf, uint32_t base)
 {
-  while(UARTCharsAvail(UART1_BASE) && recvSize < MESSAGE_SIZE)
-    {
-      recvBuffer[recvSize] = UARTCharGet(UART1_BASE);
-      recvSize++;
+  int len;
 
-    }
-
-  //check for newline or max message size
-  if(recvBuffer[recvSize-1] == 0x0A || recvSize == MESSAGE_SIZE)
+  if(UARTCharsAvail(base))
     {
-      OS_memcpy(sendBuffer, recvBuffer, recvSize);
-      UARTSend();
+      len = OS_strlen(buf);
+
+      buf[len] = UARTCharGet(base);
+      buf[len+1] = 0;
 
     }
 
@@ -54,6 +42,7 @@ void UARTReceive()
 // Echo input from the UART.
 //
 //*****************************************************************************
+/*
 void UARTEcho()
 {
   while(UARTCharsAvail(UART1_BASE) && recvSize < MESSAGE_SIZE)
@@ -72,12 +61,13 @@ void UARTEcho()
     }
 
 }
-
+*/
 //*****************************************************************************
 //
 // Send a string to the UART.
 //
 //*****************************************************************************
+/*
 void UART_init()
 {
   sendSize = 0;
@@ -130,4 +120,4 @@ void UART_run()
 
 
 }
-
+*/

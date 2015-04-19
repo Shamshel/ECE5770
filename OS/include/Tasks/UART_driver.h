@@ -6,10 +6,10 @@
 #include "OS/MPI.h"
 #include "OS/hardware_drivers.h"
 
-#define UART_init function_UART_init
-#define UART_run fuction_UART_run
+#define UART_recv function_UART_recv
+#define UART_send function_UART_send
 
-extern void UART_init();
-extern void UART_run();
+extern void UART_recv();
+extern void UART_send();
 
 #endif

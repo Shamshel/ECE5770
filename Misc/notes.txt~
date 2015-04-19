@@ -19,6 +19,9 @@ https://rrt2x7.wordpress.com/embedded/
 remote and gui gdb instructions:
 http://fun-tech.se/stm32/OpenOCD/gdb.php
 
+ESP8266 pinout and info (using ESP-01):
+http://hackerspace.pbworks.com/w/page/88183850/ESP8266
+
 connect to serial device:
 	screen /dev/ttyS0 <baud>
 

@@ -53,14 +53,14 @@ void Kernel_run()
   // Setup gpio and clocking
 
   // Set the clocking to run directly from the crystal.
-  ROM_SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
+  SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
 		     SYSCTL_XTAL_16MHZ);
                                                                                 
   // Enable the GPIO port that is used for the on-board LED.
-  ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
   // Enable the GPIO pins for the LED (PF2).
-  ROM_GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
+  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
 
   //task inits
   WiFi_init();
