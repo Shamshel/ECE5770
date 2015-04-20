@@ -10,4 +10,5 @@ obj/Kernel.o: src/OS/Kernel.c include/OS/OS.h \
  include/driverlib/fpu.h include/driverlib/gpio.h \
  include/driverlib/interrupt.h include/driverlib/pin_map.h \
  include/driverlib/rom.h include/driverlib/sysctl.h \
- include/driverlib/uart.h include/Tasks/Wi-Fi_driver.h
+ include/driverlib/uart.h include/Tasks/Wi-Fi_driver.h \
+ include/Tasks/UART_driver.h include/Tasks/Wi-Fi_controller.h

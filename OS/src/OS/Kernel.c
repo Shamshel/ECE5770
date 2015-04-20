@@ -9,6 +9,7 @@
 
 //tasks
 #include "Tasks/Wi-Fi_driver.h"
+#include "Tasks/Wi-Fi_controller.h"
 
 //this array determines the schedule that the system will run
 static task_ptr_t schedule[NUM_TASKS];
@@ -64,9 +65,11 @@ void Kernel_run()
 
   //task inits
   WiFi_init();
+  WiFi_controller_init();
 
   //Kernel_register_function(dummy_function);
   Kernel_register_function(WiFi_run);
+  Kernel_register_function(WiFi_controller_run);
 
   while(done == false)
     {

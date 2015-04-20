@@ -6,10 +6,13 @@
 #include "OS/MPI.h"
 #include "OS/hardware_drivers.h"
 
+#define CONSOLE_BASE UART1_BASE
+#define WIFI_BASE UART7_BASE
+
 #define UART_recv function_UART_recv
 #define UART_send function_UART_send
 
-extern void UART_recv();
-extern void UART_send();
+extern void UART_recv(char* msg, uint32_t base);
+extern void UART_send(const char* msg, uint32_t base);
 
 #endif

@@ -1,0 +1,150 @@
++IPD,0,256:GET /?pin=11 HTTP/1.1
+256:GET /?pin=11 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=0
+
+OK
+Unlink
+Link
+
++IPD,0,256:GET /?pin=12 HTTP/1.1
+256:GET /?pin=12 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=0
+
+OK
+Unlink
+Link
+
++IPD,0,256:GET /?pin=13 HTTP/1.1
+256:GET /?pin=13 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+Link
+AT+CIPCLOSE=0
+
+OK
+
++IPD,1,256:GET /?pin=11 HTTP/1.1
+256:GET /?pin=11 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=1
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=1	<------------------------------------------------------------------------ WiFi usage overload, causes Wifi reset!
+/)��!���i9�������)
+[Vendor:www.ai-thinker.com Version:0.9.2.4]
+
+ready		<------------------------------------------------------------------------ Noticed WiFi reset, had to reset Tiva
+AT+RST		<------------------------------------------------------------------------ Tiva reset begins configuration
+ready
+AT+CWMODE=1
+no change
+AT+CWJAP="XXXXXXXXXXX","XXXXXXXXXXXX"
+OK
+AT+CIPMUX=1
+OK
+AT+CIPSERVER=1,1336
+OK
+Link
+
++IPD,0,256:GET /?pin=12 HTTP/1.1
+256:GET /?pin=12 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+Link
+AT+CIPCLOSE=0
+
+OK
+
++IPD,1,256:GET /?pin=13 HTTP/1.1
+256:GET /?pin=13 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=1
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=1
+Link
+
++IPD,0,256:GET /?pin=13 HTTP/1.1
+256:GET /?pin=13 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+
+OK
+AT+CIPCLOSE=0
+
+OK
+Unlink
+Link
+
++IPD,0,256:GET /?pin=11 HTTP/1.1
+256:GET /?pin=11 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=0
+
+OK
+Unlink
+Link
+
++IPD,0,256:GET /?pin=12 HTTP/1.1
+256:GET /?pin=12 HTTP/1.1
+Host: 192.168.2./5.0 (X11; Fedora; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+AT+CIPCLOSE=0
+Accept: */*
+Acc null
+Connection: keep-alive
+
+
+OK
+AT+CIPCLOSE=0
+
+OK
+Unlink

@@ -4,75 +4,11 @@ Info : tm4c123gh6pm.cpu: hardware has 6 breakpoints, 4 watchpoints
 Info : accepting 'telnet' connection from 4444
 target state: halted
 target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
+xPSR: 0x01000000 pc: 0x000009a0 msp: 0x200036a0
 auto erase enabled
-wrote 4096 bytes from file main.bin in 0.517833s (7.724 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000061c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.580832s (8.608 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.708983s (7.052 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.574803s (8.699 KiB/s)
+wrote 7168 bytes from file main.bin in 0.744845s (9.398 KiB/s)
 Error: memory read failed: 0x7
 Error: jtag status contains invalid mode value - communication failure
 Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 100ms
 Polling target tm4c123gh6pm.cpu succeeded again
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.578912s (8.637 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.566825s (8.821 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.582830s (8.579 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.580844s (8.608 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.572835s (8.729 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.576808s (8.668 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0000068c msp: 0x200036a0
-auto erase enabled
-wrote 5120 bytes from file main.bin in 0.580689s (8.610 KiB/s)
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 100ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 300ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 700ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 1500ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 3100ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 6300ms
-Error: jtag status contains invalid mode value - communication failure
-Polling target tm4c123gh6pm.cpu failed, GDB will be halted. Polling again in 6300ms
 Info : dropped 'telnet' connection
