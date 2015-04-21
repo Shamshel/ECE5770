@@ -2,7 +2,7 @@
 
 #include "Tasks/Motor_driver.h"
 
-static int cmdSize;
+static unsigned int cmdSize;
 static char incomingMsg[MESSAGE_SIZE];
 static int incomingCmd;
 static int incomingPID;
@@ -38,11 +38,11 @@ void driveLeft()
   GPIOPinWrite(PORT_BASE, PWM_LEFT, PWM_LEFT);
   GPIOPinWrite(PORT_BASE, PWM_RIGHT, PWM_RIGHT);
 
-  GPIOPinWrite(PORT_BASE, CTRL1_LEFT, CTRL1_LEFT);
-  GPIOPinWrite(PORT_BASE, CTRL2_LEFT, 0);
+  GPIOPinWrite(PORT_BASE, CTRL1_LEFT, 0);
+  GPIOPinWrite(PORT_BASE, CTRL2_LEFT, CTRL2_LEFT);
 
-  GPIOPinWrite(PORT_BASE, CTRL1_RIGHT, 0);
-  GPIOPinWrite(PORT_BASE, CTRL2_RIGHT, CTRL2_RIGHT);
+  GPIOPinWrite(PORT_BASE, CTRL1_RIGHT, CTRL1_RIGHT);
+  GPIOPinWrite(PORT_BASE, CTRL2_RIGHT, 0);
 
 }
 
@@ -51,8 +51,8 @@ void driveRight()
   GPIOPinWrite(PORT_BASE, PWM_LEFT, PWM_LEFT);
   GPIOPinWrite(PORT_BASE, PWM_RIGHT, PWM_RIGHT);
 
-  GPIOPinWrite(PORT_BASE, CTRL1_LEFT, 0);
-  GPIOPinWrite(PORT_BASE, CTRL2_LEFT, CTRL2_LEFT);
+  GPIOPinWrite(PORT_BASE, CTRL1_LEFT, CTRL1_LEFT);
+  GPIOPinWrite(PORT_BASE, CTRL2_LEFT, 0);
 
   GPIOPinWrite(PORT_BASE, CTRL1_RIGHT, 0);
   GPIOPinWrite(PORT_BASE, CTRL2_RIGHT, CTRL2_RIGHT);
@@ -91,6 +91,8 @@ void Motor_init()
 
     }
 
+  driveHalt();
+
 }
 
 void Motor_run()
@@ -106,26 +108,31 @@ void Motor_run()
 	  switch(incomingCmd)
 	    {
 	    case C_DRIVE_FORWARD:
+	      UART_send("drive forward\r\n", CONSOLE_BASE);
 	      driveForward();
 
 	      break;
 
 	    case C_DRIVE_REVERSE:
+	      UART_send("drive reverse\r\n", CONSOLE_BASE);
 	      driveReverse();
 
 	      break;
 
 	    case C_DRIVE_LEFT:
+	      UART_send("drive left\r\n", CONSOLE_BASE);
 	      driveLeft();
 	      
 	      break;
 
 	    case C_DRIVE_RIGHT:
+	      UART_send("drive right\r\n", CONSOLE_BASE);
 	      driveRight();
 
 	      break;
 
 	    case C_DRIVE_HALT:
+	      UART_send("drive halt\r\n", CONSOLE_BASE);
 	      driveHalt();
 
 	      break;

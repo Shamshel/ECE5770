@@ -13,8 +13,9 @@
 //WiFi setup and configuration
 #define WIFI_SSID "YOUR_SSID_HERE"
 #define WIFI_PASS "YOUR_SSID_PASS_HERE"
-#define WIFI_PORT "1336"
+#define WIFI_PORT "8888"
 #define MAX_INCOMING 10
+#define CLOSE_CONN_DELAY 1000
 
 //MPI configuration
 #define MESSAGE_SIZE 128
