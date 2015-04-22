@@ -3,17 +3,18 @@
     <title>ESP8266 LED Control</title>
   </head>
   <body>
-    <!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
-    <button id="11" class="led">Toggle Pin 11</button> <!-- button for pin 11 -->
-    <button id="12" class="led">Toggle Pin 12</button> <!-- button for pin 12 -->
-    <button id="13" class="led">Toggle Pin 13</button> <!-- button for pin 13 -->
+    <button id="10" class="led">Drive Forward</button>
+    <button id="11" class="led">Drive Reverse</button>
+    <button id="13" class="led">Drive Left</button>
+    <button id="12" class="led">Drive Right</button>
+    <button id="14" class="led">Drive Halt</button>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
       	$(".led").click(function(){
-		      var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+		      var c = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
 		      // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
-		      $.get("http://192.168.2.16:1336/", {pin:p}); // execute get request
+		      $.get("http://192.168.2.16:8888/", {cmd:c}); // execute get request
 	      });
       });
     </script>
