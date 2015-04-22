@@ -2,27 +2,4 @@ Info : This adapter doesn't support configurable speed
 Info : ICDI Firmware version: 9270
 Info : tm4c123gh6pm.cpu: hardware has 6 breakpoints, 4 watchpoints
 Info : accepting 'telnet' connection from 4444
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x000009b0 msp: 0x200036a4
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x000009b0 msp: 0x200036a4
-auto erase enabled
-wrote 8192 bytes from file main.bin in 0.831837s (9.617 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x000009b0 msp: 0x200036a4
-auto erase enabled
-wrote 8192 bytes from file main.bin in 0.821972s (9.733 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x000009b0 msp: 0x200036a4
-auto erase enabled
-wrote 8192 bytes from file main.bin in 0.814906s (9.817 KiB/s)
-target state: halted
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x000009b0 msp: 0x200036a4
-auto erase enabled
-wrote 8192 bytes from file main.bin in 0.806993s (9.913 KiB/s)
 Info : dropped 'telnet' connection

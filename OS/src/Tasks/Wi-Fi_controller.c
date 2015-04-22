@@ -34,7 +34,6 @@ void WiFi_controller_run()
 
       if(delay <= 0)
 	{
-	  delay = CLOSE_CONN_DELAY;
 	  OS_strcpy(msgBuffer, "AT+CIPCLOSE=");
 	  bufSize = OS_strlen(msgBuffer);
 
@@ -55,7 +54,7 @@ void WiFi_controller_run()
 	  bufSize = 0;
 	  msgBuffer[bufSize] = 0;
 	  delayClose = false;
-		  
+	  delay = CLOSE_CONN_DELAY;
 
 	}
 
@@ -116,31 +115,31 @@ void WiFi_controller_run()
 	      switch(cmdNum)
 		{
 		case C_DRIVE_FORWARD:
-		  UART_send("drive forward\r\n", CONSOLE_BASE);
+		  //UART_send("drive forward\r\n", CONSOLE_BASE);
 		  MPI_send_message(WIFI_CONTROLLER_PID, MOTOR_DRIVER_PID, sizeof(int), &cmdNum);
 
 		  break;
 
 		case C_DRIVE_REVERSE:
-		  UART_send("drive reverse\r\n", CONSOLE_BASE);
+		  //UART_send("drive reverse\r\n", CONSOLE_BASE);
 		  MPI_send_message(WIFI_CONTROLLER_PID, MOTOR_DRIVER_PID, sizeof(int), &cmdNum);
 
 		  break;
 
 		case C_DRIVE_LEFT:
-		  UART_send("drive left\r\n", CONSOLE_BASE);
+		  //UART_send("drive left\r\n", CONSOLE_BASE);
 		  MPI_send_message(WIFI_CONTROLLER_PID, MOTOR_DRIVER_PID, sizeof(int), &cmdNum);
 
 		  break;
 
 		case C_DRIVE_RIGHT:
-		  UART_send("drive right\r\n", CONSOLE_BASE);
+		  //UART_send("drive right\r\n", CONSOLE_BASE);
 		  MPI_send_message(WIFI_CONTROLLER_PID, MOTOR_DRIVER_PID, sizeof(int), &cmdNum);
 
 		  break;
 
 		case C_DRIVE_HALT:
-		  UART_send("drive halt\r\n", CONSOLE_BASE);
+		  //UART_send("drive halt\r\n", CONSOLE_BASE);
 		  MPI_send_message(WIFI_CONTROLLER_PID, MOTOR_DRIVER_PID, sizeof(int), &cmdNum);
 
 		  break;
