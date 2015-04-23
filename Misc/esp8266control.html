@@ -5,8 +5,8 @@
   <body>
     <button id="10" class="led">Drive Forward</button>
     <button id="11" class="led">Drive Reverse</button>
-    <button id="13" class="led">Drive Left</button>
-    <button id="12" class="led">Drive Right</button>
+    <button id="13" class="led">Drive Right</button>
+    <button id="12" class="led">Drive Left</button>
     <button id="14" class="led">Drive Halt</button>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
@@ -14,7 +14,7 @@
       	$(".led").click(function(){
 		      var c = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
 		      // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
-		      $.get("http://192.168.2.16:8888/", {cmd:c}); // execute get request
+		      $.get("http://144.39.221.64:8888/", {cmd:c}); // execute get request
 	      });
       });
     </script>
