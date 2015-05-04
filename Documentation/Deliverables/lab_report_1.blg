@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: lab_report_1.aux
+The style file: plain.bst
+Database file #1: sample.bib
+Warning--empty journal in SW-TM4C
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            530 strings with 4638 characters,
+and the built_in function-call counts, 1649 in all, are:
+= -- 160
+> -- 49
+< -- 1
++ -- 21
+- -- 14
+* -- 71
+:= -- 272
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 28
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 60
+empty$ -- 164
+format.name$ -- 14
+if$ -- 360
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 1
+newline$ -- 38
+num.names$ -- 14
+pop$ -- 54
+preamble$ -- 1
+purify$ -- 21
+quote$ -- 0
+skip$ -- 58
+stack$ -- 0
+substring$ -- 65
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 1
+while$ -- 17
+width$ -- 8
+write$ -- 72
+(There was 1 warning)

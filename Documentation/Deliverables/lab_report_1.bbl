@@ -1,0 +1,42 @@
+\begin{thebibliography}{1}
+
+\bibitem{microkernel}
+collaborative.
+\newblock Microkernel.
+\newblock http://en.wikipedia.org/wiki/Microkernel, May 2015.
+
+\bibitem{modular-c}
+John~R. Hayes.
+\newblock Modular programming in c.
+\newblock
+  http://www.embedded.com/design/prototyping-and-development/4023876/Modular-Programming-in-C,
+  November 2001.
+
+\bibitem{multi-chassis}
+Sparkfun.com.
+\newblock Multi-chassis - 4wd kit (basic).
+\newblock https://www.sparkfun.com/products/12089, November 2013.
+
+\bibitem{ESP8266}
+Sparkfun.com.
+\newblock Wifi module - esp8266.
+\newblock https://www.sparkfun.com/products/13252, April 2015.
+
+\bibitem{SW-TM4C}
+TI.
+\newblock Sw-tm4c-utils-ug.
+\newblock pages "1--188", October 2013.
+
+\bibitem{Tiva-C}
+TI.
+\newblock Ti launchpad.
+\newblock http://www.ti.com/ww/en/launchpad/community.html, May 2015.
+
+\bibitem{neo-6}
+U-blox.
+\newblock Neo-6 data sheet.
+\newblock
+  https://www.u-blox.com/images/downloads/Product\_Docs/NEO-6\_DataSheet\_\%28GPS.G6-HW-09005\%29.pdf,
+  May 2011.
+
+\end{thebibliography}
