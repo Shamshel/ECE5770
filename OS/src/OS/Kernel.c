@@ -4,6 +4,9 @@
 //OS base
 #include "OS/OS.h"
 
+//Kernel external functions (hardware dependent)
+#include "Tasks/Kernel_driver.h"
+
 //hardware defines
 #include "OS/hardware_drivers.h"
 
@@ -17,13 +20,6 @@ static task_ptr_t schedule[NUM_TASKS];
 
 static int num_tasks = 0;
 static int current_task = 0;
-
-void dummy_function()
-{
-  // Delay for 1 millisecond.  Each SysCtlDelay is about 3 clocks.
-  SysCtlDelay(SysCtlClockGet() / 10 / 3);
-
-}
 
 int Kernel_register_function(task_ptr_t task)
 {
@@ -50,19 +46,9 @@ void Kernel_run()
   int srcPID;
   unsigned int size;
   int error_code;
-  uint32_t LED_state = 0;
 
   // Setup gpio and clocking
-
-  // Set the clocking to run directly from the crystal.
-  SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
-		     SYSCTL_XTAL_16MHZ);
-                                                                                
-  // Enable the GPIO port that is used for the on-board LED.
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-
-  // Enable the GPIO pins for the LED (PF2).
-  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
+  Kernel_init();
 
   //task inits
   WiFi_init();
@@ -76,21 +62,8 @@ void Kernel_run()
 
   while(done == false)
     {
-      if(LED_state == GPIO_PIN_2)
-	{
-	  LED_state = 0;
-
-	}
-
-      else
-	{
-	  LED_state = GPIO_PIN_2;
-
-	}
-
-      // Blink the LED to show a character transfer is occuring.
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, LED_state);
-
+      Kernel_task_complete();
+      
       //execute next task
       if(num_tasks > 0)
 	{

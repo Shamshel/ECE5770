@@ -8,7 +8,7 @@ PART=TM4C123GH6PM
 CFLAGS=-mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -ffunction-sections -fdata-sections -MD -std=c99 -Wall -pedantic -DPART_TM4C123GH6PM -c -DTARGET_IS_BLIZZARD_RB1 -Dgcc -I/usr/lib/arm-none-eabi/include -L/usr/lib/arm-none-eabi/newlib
 TEST_CFLAGS=-lcunit
 OBJ_COPY_FLAGS=-O binary
-LDFLAGS=--entry ResetISR --gc-sections '/usr/lib64/gcc/arm-none-eabi/4.8.1/../../../../arm-none-eabi/lib/thumb/libm.a' '/usr/lib64/gcc/arm-none-eabi/4.8.1/../../../../arm-none-eabi/lib/thumb/libc.a' '/usr/lib64/gcc/arm-none-eabi/4.8.1/thumb/libgcc.a' -T OS.ld
+LDFLAGS=--entry ResetISR --gc-sections ${shell ${CC} ${CFLAGS} -print-file-name=libm.a} ${shell ${CC} ${CFLAGS} -print-file-name=libc.a} ${shell ${CC} ${CFLAGS} -print-libgcc-file-name} -T OS.ld
 
 SRC_DIR=src
 INCLUDE_DIR=include
@@ -80,6 +80,15 @@ MOTOR_DRIVER_DEPS=$(addprefix $(SRC_DIR)/$(TASK_DIR)/,$(_MOTOR_DRIVER_DEPS))
 _MOTOR_DRIVER_INCL=Motor_driver.h
 MOTOR_DRIVER_INCL=$(addprefix $(INCLUDE_DIR)/$(TASK_DIR)/,$(_MOTOR_DRIVER_INCL))
 
+KERNEL_DRIVER=Kernel_driver
+_KERNEL_DRIVER_OBJ=$(addsuffix .o,$(KERNEL_DRIVER))
+KERNEL_DRIVER_OBJ=$(addprefix $(INCLUDE_DIR)/$(TASK_DIR)/,$(_KERNEL_DRIVER_OBJ))
+
+_KERNEL_DRIVER_DEPS=Kernel_driver.c
+KERNEL_DRIVER_DEPS=$(addprefix $(SRC_DIR)/$(TASK_DIR)/,$(_KERNEL_DRIVER_DEPS))
+_KERNEL_DRIVER_INCL=Kernel_driver.h
+KERNEL_DRIVER_INCL=$(addprefix $(INCLUDE_DIR)/$(TASK_DIR)/,$(_KERNEL_DRIVER_INCL))
+
 _SYS_INCL=OS.h oserr.h sysConfig.h
 SYS_INCL=$(addprefix $(INCLUDE_DIR)/$(OS_DIR)/,$(_OS_INCL))
 
@@ -94,9 +103,9 @@ MAIN=main
 _MAIN_OBJ=$(addsuffix .o,$(MAIN))
 MAIN_OBJ=$(addprefix $(OBJ_DIR)/,$(_MAIN_OBJ))
 MAIN_DEP=$(addsuffix .c,$(SRC_DIR)/$(MAIN))
-MAIN_AXF=main.axf
-MAIN_ELF=main.elf
-MAIN_BIN=main.bin
+MAIN_AXF=$(addsuffix .axf,$(MAIN))
+MAIN_ELF=$(addsuffix .elf, $(MAIN))
+MAIN_BIN=$(addsuffix .bin, $(MAIN))
 
 TEST=test
 TEST_OBJ=$(addsuffix .bin,$(TEST))
